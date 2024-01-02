@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Semester Fee</title>
+	<link rel="stylesheet" type="text/css" href="Style2.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="Style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+ 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+</head>
+<body bgcolor="#5F9B96"> 
+			<nav>
+	    		<div class="nav-links">
+				
+					<ul>
+						<li><a href="Project.html">HOME</a></li>
+						<li><a href="Faculty.html">FACULTY</a></li>
+						<li><a href="Courses.html">COURSE</a></li>
+						<li><a href="About.html">ABOUT US</a></li>
+						<li><a href="Contact.html">CONTACT</a></li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="Valentine">
+						<h1>Department Of IT</h1>
+						</div>
+
+	<section class="header7">
+		<div class="akter1">
+	<form name="calculator">
+		<input type="text" name="credit" placeholder="Credit" required><br><br>
+		<input type="text" name="waiver" placeholder="Waiver(in percentage)" required><br>
+		<br>
+		<div class="x1">
+			<h3>Your Semester Fee: </h3><br><input type="text" name="fee">
+		</div>
+		<br>
+		<div class="samia1">
+		<input type="button" value="Calculate" onclick="result()">
+		</div>
+		</div>
+	</form>
+	</section>
+
+	<script type="text/javascript">
+		function result()
+		{
+			var credit, waiver, total, result;
+			credit = Number(document.calculator.credit.value);
+			waiver = Number(document.calculator.waiver.value);
+
+
+			total = (credit*3000)*(waiver/100.00);
+			if(total <= 0){
+				setErrorFor(result, 'You have to fill credit & Waiver');
+
+			}
+			else{
+			result = ((credit*3000)-total)+4500;
+			document.calculator.fee.value=result;
+		}
+		}
+
+
+		function setErrorFor(input, message) {
+	var formControl = input.parentElement;
+	var small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
+}
+	</script>
+</body>
+</html>

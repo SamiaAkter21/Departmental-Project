@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tuition Fees</title>
+	<link rel="stylesheet" type="text/css" href="Style2.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="Style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+ 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,300;1,500;1,600&family=Open+Sans+Condensed:wght@300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap" rel="stylesheet">
+</head>
+<body bgcolor="#5F9B96"> 
+
+			<nav>
+	    		<div class="nav-links">
+				
+					<ul>
+						<li><a href="Project.html">HOME</a></li>
+						<li><a href="Faculty.html">FACULTY</a></li>
+						<li><a href="Courses.html">COURSE</a></li>
+						<li><a href="About.html">ABOUT US</a></li>
+						<li><a href="Contact.html">CONTACT</a></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="Valentine">
+						<h1>Department Of IT</h1>
+						</div>
+
+	<section class="header6">
+	<div class="akter">
+	<form name="calculator">
+		<input type="text" name="credit" placeholder="Enter Your SSC Result" required><br><br>
+		<input type="text" name="waiver" placeholder="Enter Your HSC Result" required><br>
+		<br>
+		<div class="x">
+			<h3>Your Total Tuition Fee: </h3><br><input type="text" name="fee">
+		</div>
+		<br>
+		<br>
+
+		<div class="samia">
+			<input type="button" value="Calculate" onclick="result()">
+	    </div>
+
+	</form>
+	</div>
+	</section>
+
+	<script type="text/javascript">
+		function result()
+		{
+			var credit, waiver, total, result;
+			credit = Number(document.calculator.credit.value);
+			waiver = Number(document.calculator.waiver.value);
+
+			if((credit+waiver)==10)
+			{
+				total=(468000/2)+36000;
+			}
+
+			if((credit+waiver)<=9.99 && (credit+waiver)>=9.50)
+			{
+				result=(468000*0.45);
+				total=(468000-result)+36000;
+			}
+
+			if((credit+waiver)<=9.49 && (credit+waiver)>=9.00)
+			{
+				result=(468000*0.40);
+				total=(468000-result)+36000;
+			}
+			if((credit+waiver)<=8.99 && (credit+waiver)>=8.50)
+			{
+				result=(468000*0.35);
+				total=(468000-result)+36000;
+			}
+
+			if((credit+waiver)<8.49 && (credit+waiver)>=8.00)
+			{
+				result=(468000*0.30);
+				total=(468000-result)+36000;
+			}
+
+			/*total = (credit*3000)*(waiver/100.00);*/
+			if(total <= 0){
+
+				setErrorFor(result, 'You have to fill credit & Waiver');
+			}
+			else{
+			/*result = ((credit*3000)-total)+4500;*/
+			document.calculator.fee.value=total;
+		}
+	}
+
+	function setErrorFor(input, message) {
+	var formControl = input.parentElement;
+	var small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
+}
+	</script>
+</body>
+</html>
